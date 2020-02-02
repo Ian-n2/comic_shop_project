@@ -1,0 +1,18 @@
+<h1>HEADING</h1>
+<table>
+  <tr>
+    <th>name</th>
+    <th>active</th>
+    <th>location</th>
+    </tr>
+  <% for supplier in @Suppliers %>
+  <tr>
+    <td><%= supplier.name %></td>
+    <td>|</td>
+    <td><%= supplier.active %></td>
+    <td>|</td>
+    <td><%= supplier.location%></td>
+
+  </tr>
+  <% end %>
+</table>

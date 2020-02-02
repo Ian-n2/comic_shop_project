@@ -2,12 +2,12 @@ require_relative('../db/sql_runner')
 
 class Supplier
 
-  attr_accesor( :name, :active, :location, :id)
+  attr_accessor( :name, :active, :location, :id)
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
-    @name = options['name']
-    @active = options['active'].to_i if options['active']
+    @name = options['name'].to_s if options['name']
+    @active = options['active']
     @location = options['location']
   end
 
@@ -28,11 +28,11 @@ class Supplier
     @id = results.first()['id'].to_i
   end
 
-  def self.delete_all
-    sql = "DELETE FROM suppliers"
-    SqlRunner.run( sql )
+  def self.all()
+    sql = "SELECT * FROM suppliers"
+    results = SqlRunner.run(sql)
+    return results.map{ |supplier| Supplier.new(supplier)}
   end
-
   def self.find(id)
     sql = "SELECT * FROM suppliers
     WHERE id = $1"
@@ -41,10 +41,11 @@ class Supplier
     return Supplier.new(results.first)
   end
 
-  def self.all()
-    sql = "SELECT * FROM supplers"
-    results = SqlRunner.run(sql)
-    return result.map{ |supplier| Supplier.new(supplier)}
+
+  def self.delete_all()
+    sql = "DELETE FROM suppliers"
+    SqlRunner.run( sql )
   end
-  
+
+
 end

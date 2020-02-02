@@ -1,0 +1,33 @@
+<h1>COMICS!!</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <td>|</td>
+    <th>Type</th>
+    <td>|</td>
+    <th>stock</th>
+    <td>|</td>
+    <th>cost</th>
+    <td>|</td>
+    <th>rrp</th>
+    <td>|</td>
+    <th>Supplier</th>
+  </tr>
+  <% for comic in @comics %>
+  <tr>
+    <td><%= comic.name %></td>
+    <td>|</td>
+    <td><%= comic.type%></td>
+    <td>|</td>
+    <td><%= comic.stock%></td>
+    <td>|</td>
+    <td><%= comic.cost%></td>
+    <td>|</td>
+    <td><%= comic.rrp%></td>
+    <td>|</td>
+    <td><%= comic.supplier.name%></td>
+  </tr>
+  <% end %>
+
+</table>

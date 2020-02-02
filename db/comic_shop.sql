@@ -1,4 +1,3 @@
-DROP TABLE inventory;
 DROP TABLE comics;
 DROP TABLE suppliers;
 

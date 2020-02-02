@@ -1,0 +1,17 @@
+<form action="/comics/index" method="post">
+
+  <label for="name">Title:</label>
+    <input id="name"
+     type="text" name="name"
+     value='<%=@comic.name%>'  />
+    <label for="description">Description:</label>
+    <input id="description"
+    type="text"
+    name="description"
+     value='<%=@comic.description%>' />
+    <label for="stock">quantiy:</label>
+    <input type="number" name="quantity" />
+
+     <input type="submit"  value="update"/>
+
+</form>
