@@ -1,17 +1,32 @@
 <h1>Suppliers</h1>
 <table>
   <tr>
+  <th>ID</th>
+  <td>|</td>
   <th>Name</th>
+  <th>|</th>
   <th>active</th>
+  <th>|</th>
   <th>location</th>
   </tr>
   <% for supplier in @suppliers %>
   <tr>
+    <td><%= supplier.id %></td>
+  <td>|</td>
     <td><%= supplier.name %></td>
     <td>|</td>
     <td><%= supplier.active %></td>
   <td>|</td>
   <td><%= supplier.location %></td>
+  <td>|</td>
+  <td><a href="/suppliers/<%= supplier.id %>/edit">EDIT</a></td>
+  <td>|</td>
+  <td><form action="suppliers/<%= supplier.id %>/delete" method="post">
+    <input type="submit"  value="DELETE">
+  </form></td>
   </tr>
   <% end %>
 </table>
+<form action="/suppliers/new" method="get">
+  <input type="submit" name="supplire_nae" value="Add Supplier">
+</form>

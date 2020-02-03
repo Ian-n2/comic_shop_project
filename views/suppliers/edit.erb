@@ -1,0 +1,36 @@
+<h1>edit page</h1>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>|</th>
+    <th>active</th>
+    <th>|</th>
+    <th>location</th>
+  </tr>
+  <tr>
+    <td><%= @supplier.name %></td>
+    <td>|</td>
+    <td><%= @supplier.active %></td>
+    <td>|</td>
+    <td><%= @supplier.location %></td>
+  </tr>
+</table>
+
+<form action="/suppliers/<%= @supplier.id%>" method="post">
+
+  <label for="name">name:</label>
+  <input id="name"
+  type="text" name="name" value='<%=@supplier.name%>' />
+
+  <label for="active">active</label>
+  <select id="active" name="active"
+  value='<%=@supplier.active>
+  <option value=TRUE>yes</option>
+  <option value=FLASE>no</option>
+</select>
+
+<label for="location">location</label>
+<input id="location"
+type="text" name="location" value='<%=@supplier.location>' />
+
+</form>

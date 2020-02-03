@@ -42,10 +42,27 @@ class Supplier
   end
 
 
-  def self.delete_all()
-    sql = "DELETE FROM suppliers"
-    SqlRunner.run( sql )
+  def self.delete(id)
+    sql = "DELETE FROM suppliers
+    WHERE id = $1"
+    values = [id]
+    SqlRunner.run(sql, values )
   end
 
+  def update()
+    sql = "UPDATE suppliers
+    SET
+    (
 
-end
+      name,
+      active,
+      location
+      ) =
+      (
+        $1, $2, $3
+      )
+      WHERE id = $4"
+      values = [ @name, @active, @location, @id]
+      SqlRunner.run(sql, values)
+    end
+  end

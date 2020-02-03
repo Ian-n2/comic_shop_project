@@ -1,17 +1,50 @@
-<form action="/comics/index" method="post">
+<h1>HEADING</h1>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>|</th>
+  <th>Type</th>
+    <th>|</th>
+    <th>stock</th>
+    <th>|</th>
+    <th>cost</th>
+    <th>|</th>
+    <th>rrp</th>
+    <th>|</th>
+    <th>supplier</th>
+  </tr>
+  <tr>
+    <td><%= @comic.name %></td>
+    <td>|</td>
+    <td><%= @comic.type%></td>
+    <td>|</td>
+    <td><%= @comic.stock%></td>
+    <td>|</td>
+    <td><%= @comic.cost%></td>
+    <td>|</td>
+    <td><%= @comic.rrp%></td>
+    <td>|</td>
+    <td><%= @comic.supplier%></td>
 
-  <label for="name">Title:</label>
-    <input id="name"
-     type="text" name="name"
-     value='<%=@comic.name%>'  />
-    <label for="description">Description:</label>
-    <input id="description"
-    type="text"
-    name="description"
-     value='<%=@comic.description%>' />
-    <label for="stock">quantiy:</label>
-    <input type="number" name="quantity" />
+  </tr>
+</table>
 
-     <input type="submit"  value="update"/>
+<form action="/comics/<%= @comic.id%>" method="post">
+
+  <label for="stock">stock:</label>
+  <input id="stock"
+   type="number" name="stock"
+   value='<%=@comic.stock%>'  />
+
+  <label for="cost">cost:</label>
+  <input id="cost"type="number" name="cost"
+   value='<%=@comic.cost%>' />
+
+  <label for="rrp">RRP:</label>
+  <input id="rrp"
+  type="number" name="rrp"
+  value='<%=@comic.rrp%>' />
+
+  <input type="submit"  value="update"/>
 
 </form>

@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner')
+require('pry')
 
 class Comic
 
@@ -47,16 +48,34 @@ class Comic
     return Comic.new( results.first)
   end
 
-  def self.delete_all()
-    sql = "DELETE FROM comics"
-    SqlRunner.run(sql)
+  def self.delete(id)
+    sql = "DELETE FROM comics
+    WHERE id = $1"
+    values = [id]
+    SqlRunner.run(sql, values)
   end
 
   def supplier ()
     sql = "SELECT * FROM suppliers where id = $1 "
     values = [@supplier]
-  results = SqlRunner.run(sql, values)
-  return Supplier.new(results)
-end
+    results = SqlRunner.run(sql, values)
+    return Supplier.new(results.first)
+  end
 
-end
+  def update()
+    sql = "UPDATE comics
+    SET
+    (
+      stock,
+      cost,
+      rrp
+      ) =
+      (
+        $1, $2, $3
+      )
+      WHERE id = $4"
+      values = [ @stock, @cost, @rrp, @id]
+      SqlRunner.run(sql, values)
+    end
+
+  end

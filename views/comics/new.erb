@@ -1,0 +1,24 @@
+<form action="/comics" method="post">
+
+<label for="name">comic title:</label>
+<input type="text" name="name" id="name">
+<label for="type">type:</label>
+<input type="text" name="type" id="type">
+<label for="stock">stock:</label>
+<input type="number" name="stock" id="stock">
+<label for="cost">cost:</label>
+<input type="number" name="cost" id="cost">
+<label for="rrp">RRP:</label>
+<input type="number" name="rrp" id="rrp">
+<label for="supplier">Supplier:</label>
+<label>Select supplier:
+<select name="supplier" id="supplier">
+  <% for supplier in @suppliers %>
+  <option value="<%= supplier.id %>" > <%= supplier.name %></option>
+  <% end %>
+</select>
+</label>
+<input type="submit" value="Create comic">
+
+</form>
+<!-- The above code is a series of buttons for creating a new comic. -->

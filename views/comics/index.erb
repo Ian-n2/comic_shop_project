@@ -2,6 +2,8 @@
 
 <table>
   <tr>
+    <th>ID</th>
+    <td>|</td>
     <th>Name</th>
     <td>|</td>
     <th>Type</th>
@@ -13,9 +15,15 @@
     <th>rrp</th>
     <td>|</td>
     <th>Supplier</th>
+    <td>|</td>
+    <th>edit</th>
+    <td>|</td>
+    <th>delete</th>
   </tr>
   <% for comic in @comics %>
   <tr>
+    <td><%= comic.id %></td>
+    <td>|</td>
     <td><%= comic.name %></td>
     <td>|</td>
     <td><%= comic.type%></td>
@@ -27,7 +35,15 @@
     <td><%= comic.rrp%></td>
     <td>|</td>
     <td><%= comic.supplier.name%></td>
+    <td>|</td>
+    <td><a href="/comics/<%= comic.id%>/edit">EDIT</a></td>
+    <td>|</td>
+    <td><form action="comics/<%= comic.id %>/delete" method="post">
+      <input type="submit" value="DELETE">
+    </form></td>
   </tr>
   <% end %>
-
 </table>
+  <form  action="/comics/new" method="get">
+    <input type="submit" name="comic_new" value="Add Comic">
+      </form>
