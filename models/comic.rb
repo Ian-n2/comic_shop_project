@@ -84,4 +84,15 @@ class Comic
       mark = result * 100.to_f
       return mark
     end
-  end
+
+def self.sort(id)
+  sql = "SELECT * FROM comics
+  WHERE supplier = $1"
+  values = [id]
+  comic = SqlRunner.run(sql, values)
+  return comic.map{|comic| Comic.new(comic)}
+end
+
+
+
+end
