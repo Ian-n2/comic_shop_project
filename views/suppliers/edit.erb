@@ -20,17 +20,18 @@
 
   <label for="name">name:</label>
   <input id="name"
-  type="text" name="name" value='<%=@supplier.name%>' />
+  type="text" name="name" value=<%=@supplier.name%> />
 
   <label for="active">active</label>
   <select id="active" name="active"
-  value='<%=@supplier.active>
+  value=<%=@supplier.active%> >
   <option value=TRUE>yes</option>
-  <option value=FLASE>no</option>
+  <option value=FALSE>no</option>
 </select>
 
 <label for="location">location</label>
 <input id="location"
-type="text" name="location" value='<%=@supplier.location>' />
+type="text" name="location" value=<%=@supplier.location%> />
 
+<input type="submit" value="update"/>
 </form>

@@ -15,6 +15,8 @@
     <th>rrp</th>
     <td>|</td>
     <th>Supplier</th>
+    <th>|</th>
+    <th>Mark up</th>
     <td>|</td>
     <th>edit</th>
     <td>|</td>
@@ -28,7 +30,13 @@
     <td>|</td>
     <td><%= comic.type%></td>
     <td>|</td>
+    <% if comic.stock == 0 %>
+    <td style='background-color:red'>OUT OF STOCK</td>
+    <% elsif comic.stock < 3 %>
+    <td style='background-color:yellow'><%= comic.stock%></td>
+    <%else%>
     <td><%= comic.stock%></td>
+    <%end%>
     <td>|</td>
     <td><%= comic.cost%></td>
     <td>|</td>
@@ -36,6 +44,7 @@
     <td>|</td>
     <td><%= comic.supplier.name%></td>
     <td>|</td>
+    <td><%= comic.mark_up%>%</td>
     <td><a href="/comics/<%= comic.id%>/edit">EDIT</a></td>
     <td>|</td>
     <td><form action="comics/<%= comic.id %>/delete" method="post">
@@ -44,6 +53,6 @@
   </tr>
   <% end %>
 </table>
-  <form  action="/comics/new" method="get">
-    <input type="submit" name="comic_new" value="Add Comic">
-      </form>
+<form  action="/comics/new" method="get">
+  <input type="submit" name="comic_new" value="Add Comic">
+</form>

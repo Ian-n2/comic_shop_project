@@ -78,4 +78,10 @@ class Comic
       SqlRunner.run(sql, values)
     end
 
+    def mark_up
+      profit = @rrp.to_f-@cost.to_f
+      result = profit/@cost.to_f
+      mark = result * 100.to_f
+      return mark
+    end
   end

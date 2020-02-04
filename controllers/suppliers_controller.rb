@@ -18,13 +18,13 @@ get '/suppliers/:id/edit' do
   erb(:"suppliers/edit")
 end
 
-get '/suppliers/:id' do
+post '/suppliers/:id' do
   @supplier = Supplier.new(params)
   @supplier.update
   redirect("/suppliers")
 end
 
-post '/supplier' do
+post '/suppliers' do
   @suppliers = Supplier.new(params)
   @suppliers.save()
   redirect("/suppliers")
