@@ -1,5 +1,6 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
+require('pry')
 require_relative('../models/comic.rb')
 require_relative('../models/supplier.rb')
 also_reload('../models/*')

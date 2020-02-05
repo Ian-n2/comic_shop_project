@@ -1,10 +1,16 @@
-<form action="/supplier" method="post">
+<form action="/suppliers" method="post">
 
-<label for="name">name</label>
-<input type="text" name="name" id="name">
-<label for="active">active</label>
-<input type="boolean" name="active" id="active">
-<label for="location">location</label>
+  <label for="name">Name</label>
+  <input type="text" name="name" id="name">
+
+  <label for="active">Active</label>
+  <select id="active" name="active">
+
+  <option value=TRUE>Yes</option>
+  <option value=FALSE>No</option>
+</select>
+
+<label for="location">Location</label>
 <input type="text" name="location" id="location">
 
 <input type="submit" value="Create supplier">

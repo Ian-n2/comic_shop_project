@@ -15,5 +15,5 @@ CREATE TABLE comics(
   stock INT,
   cost INT,
   RRP INT,
-  supplier INT references suppliers(id)
+  supplier_id INT references suppliers(id)
 );

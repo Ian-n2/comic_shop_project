@@ -1,11 +1,11 @@
-<h1>edit page</h1>
+<h1>Edit page</h1>
 <table>
   <tr>
     <th>Name</th>
     <th>|</th>
-    <th>active</th>
+    <th>Active</th>
     <th>|</th>
-    <th>location</th>
+    <th>Location</th>
   </tr>
   <tr>
     <td><%= @supplier.name %></td>
@@ -18,18 +18,18 @@
 
 <form action="/suppliers/<%= @supplier.id%>" method="post">
 
-  <label for="name">name:</label>
+  <label for="name">Name:</label>
   <input id="name"
   type="text" name="name" value=<%=@supplier.name%> />
 
-  <label for="active">active</label>
+  <label for="active">Active</label>
   <select id="active" name="active"
   value=<%=@supplier.active%> >
-  <option value=TRUE>yes</option>
-  <option value=FALSE>no</option>
+  <option value=TRUE>Yes</option>
+  <option value=FALSE>No</option>
 </select>
 
-<label for="location">location</label>
+<label for="location">Location</label>
 <input id="location"
 type="text" name="location" value=<%=@supplier.location%> />
 

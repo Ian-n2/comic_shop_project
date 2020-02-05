@@ -41,6 +41,10 @@ class Supplier
     return Supplier.new(results.first)
   end
 
+  def self.delete_all()
+    sql = "DELETE FROM suppliers"
+    SqlRunner.run(sql)
+  end
 
   def self.delete(id)
     sql = "DELETE FROM suppliers
@@ -48,6 +52,7 @@ class Supplier
     values = [id]
     SqlRunner.run(sql, values )
   end
+
 
   def update()
     sql = "UPDATE suppliers

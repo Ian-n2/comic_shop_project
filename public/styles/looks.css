@@ -1,8 +1,26 @@
+*{padding: 0;}
+
+
+
 body {
-  /* background-image: url("/images/bubble.jpg"); */
+  background-color: lightblue;
   background-size: 100%;
   background-repeat: no-repeat;
   font-family: sans-serif;
   font-size: 22px;
   text-align: center;
+  padding: 8;
+}
+
+nav li {
+  display: inline;
+list-style: none;
+margin: 0;
+padding: 0;
+}
+
+form {
+display: row;
+flex-wrap: wrap;
+
 }

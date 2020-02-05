@@ -1,9 +1,11 @@
 <h1>COMICS!!</h1>
+<p>Here are all the comics in your stock system.</p>
+<p>Make sure to order more before you run out of stock.</p>
 <form  action="/comics/supplier" method="get">
   <select id="sort" name="supplier">
     <% for supplier in @suppliers%>
-<option value="<%= supplier.id%>"><%=supplier.name%></option>
-<%end%>
+<option value="<%= supplier.id%>"><%= supplier.name %></option>
+   <%end%>
   </select>
   <input type="submit" value="sort">
 </form>
@@ -15,19 +17,19 @@
     <td>|</td>
     <th>Type</th>
     <td>|</td>
-    <th>stock</th>
+    <th>Stock</th>
     <td>|</td>
-    <th>cost</th>
+    <th>Cost</th>
     <td>|</td>
-    <th>rrp</th>
+    <th>RRP</th>
     <td>|</td>
     <th>Supplier</th>
     <th>|</th>
     <th>Mark up</th>
     <td>|</td>
-    <th>edit</th>
+    <th>Edit</th>
     <td>|</td>
-    <th>delete</th>
+    <th>Delete</th>
   </tr>
   <% for comic in @comics %>
   <tr>
@@ -45,11 +47,11 @@
     <td><%= comic.stock%></td>
     <%end%>
     <td>|</td>
-    <td><%= comic.cost%></td>
+    <td>£<%= comic.cost%></td>
     <td>|</td>
-    <td><%= comic.rrp%></td>
+    <td>£<%= comic.rrp%></td>
     <td>|</td>
-    <td><%= comic.supplier.name%></td>
+    <td><%= comic.get_supplier.name %></td>
     <td>|</td>
     <td><%= comic.mark_up%>%</td>
     <td>|</td>

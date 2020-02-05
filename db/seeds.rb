@@ -6,7 +6,7 @@ Comic.delete_all()
 Supplier.delete_all()
 
 marvel = Supplier.new({
-  "name" => "marvel",
+  "name" => "Marvel",
   "active" => true,
   "location" => 'Pollok'
 })
@@ -30,7 +30,7 @@ darkhorse = Supplier.new ({
 darkhorse.save()
 
 spiderman = Comic.new({
-  "name" => "spider-man",
+  "name" => "Spider-man",
   "type" => "Action",
   "stock" => "5",
   "cost" => "3",
@@ -62,21 +62,21 @@ batman = Comic.new({
   batman.save( )
 
 superman = Comic.new({
-  "name" => "Superman"
-  "type" => "Action"
-  "stock" => "5"
-  "cost" => "3"
- "rrp" => "5"
+  "name" => "Superman",
+  "type" => "Action",
+  "stock" => "5",
+  "cost" => "3",
+ "rrp" => "5",
  "supplier_id" => dc.id
   })
   superman.save()
 
   xmen = Comic.new({
-    "name" => "X-Men"
-  "type" => "Action"
-"stock" => "5"
-"cost" => "3"
-"rrp" => "5"
+    "name" => "X-Men",
+  "type" => "Action",
+"stock" => "5",
+"cost" => "3",
+"rrp" => "5",
 "supplier_id" => marvel.id
  })
 xmen.save
